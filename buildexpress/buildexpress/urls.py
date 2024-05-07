@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import index
+from .views import index, navbar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(("app_build.urls","app_build"),"app_build")),
-    path('index', index),
+    path('index', index , name='index'),
+    path('navbar', navbar, name='navbar'),
 ]
